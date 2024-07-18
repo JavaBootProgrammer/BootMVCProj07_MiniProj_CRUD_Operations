@@ -1,9 +1,10 @@
 <%@page isELIgnored="false"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<h1>Employee Report</h1>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="core"%>
 
-<c:choose>
-	<c:when test="${!empty employees}">
+
+<core:choose>
+	<core:when test="${!empty employees}">
+	<h1 align="center">Employee Report</h1>
 
 		<table border="1" align="center" bgcolor="cyan">
 			<tr>
@@ -13,7 +14,7 @@
 				<th>salary</th>
 			</tr>
 
-			<c:forEach var="emp" items="${employees}">
+			<core:forEach var="emp" items="${employees}">
 				<tr style="color: red">
 					<td>${emp.employeeNo}</td>
 					<td>${emp.employeeName}</td>
@@ -21,9 +22,9 @@
 					<td>${emp.salary}</td>
 
 				</tr>
-			</c:forEach>
+			</core:forEach>
 
 		</table>
-	</c:when>
+	</core:when>
 
-</c:choose>
+</core:choose>
