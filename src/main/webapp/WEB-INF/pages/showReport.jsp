@@ -15,10 +15,30 @@
 <core:choose>
 
 	<core:when test="{!empty employees}">
-	
-		<h1> Employee Report</h1>
-		
 
+		<h1>Employee Report</h1>
+
+		<table border="1" align="center" bgcolor="cyan">
+
+			<tr style="color: red">
+				<th>empno</th>
+				<th>empname</th>
+				<th>job</th>
+				<th>salary</th>
+			</tr>
+
+			<core:forEach>
+				<tr style="color:red">
+				<td>${employees.employeeNo}</td>
+				<td>${employees.employeeName}</td>
+				<td>${employees.job}</td>
+				<td>${employees.salary}</td>
+
+
+				</tr>
+			</core:forEach>
+
+		</table>
 	</core:when>
 
 </core:choose>
