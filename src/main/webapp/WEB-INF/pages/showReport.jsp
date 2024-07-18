@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core"
 	prefix="core"%>
 <%@page isELIgnored="false"%>
 
@@ -8,8 +8,6 @@
 </h1>
 <br>
 <br>
-
-<h1 style="color: red; text-align: center;">welcome</h1>
 
 
 <core:choose>
@@ -27,12 +25,12 @@
 				<th>salary</th>
 			</tr>
 
-			<core:forEach>
+			<core:forEach var="emp" items="${list}">
 				<tr style="color:red">
-				<td>${employees.employeeNo}</td>
-				<td>${employees.employeeName}</td>
-				<td>${employees.job}</td>
-				<td>${employees.salary}</td>
+				<td>${emp.employeeNo}</td>
+				<td>${emp.employeeName}</td>
+				<td>${emp.job}</td>
+				<td>${emp.salary}</td>
 
 
 				</tr>
