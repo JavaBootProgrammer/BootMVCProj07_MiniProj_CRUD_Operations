@@ -6,4 +6,6 @@ public interface IEmployeeService {
 
 	public Iterable<Employee> listEmployees();
 
+	public String regiterEmployee(Employee emp);
+
 }

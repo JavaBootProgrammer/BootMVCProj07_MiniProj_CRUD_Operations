@@ -6,6 +6,8 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.nt.model.Employee;
 import com.nt.service.EmployeeServiceImp;
@@ -38,6 +40,22 @@ public class HomeController {
 		}
 		map.put("employees", list);
 		System.out.print("list from contoller class " + employeeServiceImp.listEmployees());
+
+		return "showReport";
+	}
+
+	@GetMapping("/register") // display register form
+	public String registerEmployee(@ModelAttribute("employee") Employee e) {
+
+		return "addEmployee";
+	}
+
+	@PostMapping("/register") // display register form
+	public String saveEmployee(@ModelAttribute("employee") Employee e, Map<String, Object> map) {
+
+		String message = employeeServiceImp.regiterEmployee(e);
+
+		map.put("message", message);
 
 		return "showReport";
 	}
