@@ -23,8 +23,10 @@ public class EmployeeServiceImp implements IEmployeeService {
 		System.out.print("------------");
 
 		for (Employee country : list) {
-			System.out.println("country" + country.getSalary());
-			System.out.println("country" + country.getDept());
+			System.out.println("Salary " + country.getSalary());
+			System.out.println("Dept  " + country.getDept());
+			System.out.println("Employee Name  " + country.getEmployeeName());
+			System.out.println("Job  " + country.getJob());
 		}
 
 		System.out.print("------------");

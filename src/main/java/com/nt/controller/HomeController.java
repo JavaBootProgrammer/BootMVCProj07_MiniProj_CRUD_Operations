@@ -52,11 +52,15 @@ public class HomeController {
 
 	@PostMapping("/register") // display register form
 	public String saveEmployee(@ModelAttribute("employee") Employee e, Map<String, Object> map) {
+		
+		Iterable<Employee> employees = employeeServiceImp.listEmployees();
+		
+		
 
 		String message = employeeServiceImp.regiterEmployee(e);
-
 		map.put("message", message);
-
+		map.put("employees", employees);
 		return "showReport";
+
 	}
 }

@@ -41,18 +41,18 @@
 </core:choose>
 
 
-<h2 style="color: blue; text-align: center;">${message}</h2>
+<h2 style="color: green; text-align: center;">${message}</h2>
 <center>
 	<a href="register">Register Employee <img src="images/add.png"
-		width="100px" height="100px">
+		width="10px" height="10px">
 
 	</a>
 </center>
 
 
 <center>
-	<a href="./">home <img src="images/home.png" width="100px"
-		height="100px">
+	<a href="./">home <img src="images/home.png" width="10px"
+		height="10px">
 
 	</a>
 </center>
