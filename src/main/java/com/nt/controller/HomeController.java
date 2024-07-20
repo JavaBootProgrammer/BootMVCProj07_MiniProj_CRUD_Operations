@@ -46,12 +46,14 @@ public class HomeController {
 
 	@GetMapping("/register") // display register form
 	public String registerEmployee(@ModelAttribute("employee") Employee e) {
+		System.out.println("HomeController.registerEmployee()");
 
 		return "addEmployee";
 	}
 
 	@PostMapping("/register") // display register form
 	public String saveEmployee(@ModelAttribute("employee") Employee e, Map<String, Object> map) {
+		System.out.println("HomeController.saveEmployee()");
 		
 		Iterable<Employee> employees = employeeServiceImp.listEmployees();
 		
@@ -60,7 +62,7 @@ public class HomeController {
 		String message = employeeServiceImp.regiterEmployee(e);
 		map.put("message", message);
 		map.put("employees", employees);
-		return "showReport";
+		return "redirect:reportOne";
 
 	}
 }
