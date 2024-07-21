@@ -28,7 +28,7 @@ public class HomeController {
 
 	@GetMapping("/home")
 	public String getHomePage() {
-
+		System.out.println("HomeController.getHomePage()");
 		return "home";
 	}
 
@@ -104,7 +104,7 @@ public class HomeController {
 	}
 
 	@GetMapping("/updateEmployee") // display register form
-	public String updateEmployee(@ModelAttribute("employee") Employee e,RedirectAttributes atr,
+	public String updateEmployee(@ModelAttribute("employee") Employee e, RedirectAttributes atr,
 			@RequestParam Integer employeeNo, Map<String, Object> map) {
 
 		System.out.println("HomeController.updateEmployee()");
