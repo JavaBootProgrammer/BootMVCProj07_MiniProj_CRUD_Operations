@@ -1,6 +1,7 @@
 package com.nt.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,6 +39,30 @@ public class EmployeeServiceImp implements IEmployeeService {
 
 		int value = employeeRepository.save(emp).getEmployeeNo();
 		return value + " is inserted into database";
+	}
+
+	@Override
+	public Employee findByID(int id) {
+
+		Employee employeeRecord = employeeRepository.findById(id).get();
+
+		return employeeRecord;
+	}
+
+	@Override
+	public String UdpateEmployee(Employee emp) {
+
+		System.out.println("HomeController.updateEmployee()");
+
+		Optional<Employee> empOptional = employeeRepository.findById(emp.getEmployeeNo());
+
+		if (empOptional.isPresent()) {
+			employeeRepository.save(emp);
+			return "Employee updated";
+
+		}
+		return "Employee NOT updated";
+
 	}
 
 }

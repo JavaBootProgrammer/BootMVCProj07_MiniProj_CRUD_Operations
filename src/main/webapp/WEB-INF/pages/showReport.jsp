@@ -23,13 +23,13 @@
 					<td>${emp.job}</td>
 					<td>${emp.salary}</td>
 
-					<td><a href="edit?no=${emp.employeeNo}"> <img
+					<td><a href="edit?employeeNo=${emp.employeeNo}"> <img
 							src="images/edit.png" width="10px" height="10px">Edit
 					</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 
 
-					<td><a href="delete?no=${emp.employeeNo}"> <img
-							src="images/delete.png" width="10px" height="10px">Edit
+					<td><a href="delete?employeeNo=${emp.employeeNo}"> <img
+							src="images/delete.png" width="10px" height="10px">Delete
 					</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 
 				</tr>
@@ -42,6 +42,8 @@
 
 
 <h2 style="color: green; text-align: center;">${message}</h2>
+
+
 <center>
 	<a href="register">Register Employee <img src="images/add.png"
 		width="15px" height="15px">
