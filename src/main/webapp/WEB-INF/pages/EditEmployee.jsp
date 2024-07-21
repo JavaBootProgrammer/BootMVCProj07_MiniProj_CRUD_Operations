@@ -38,3 +38,9 @@
 
 
 </form:form>
+<center>
+	<a href="./">home <img src="images/home.png" width="15px"
+		height="15px">
+
+	</a>
+</center>
