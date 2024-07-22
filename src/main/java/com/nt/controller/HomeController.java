@@ -26,7 +26,7 @@ public class HomeController {
 	@Autowired
 	EmployeeServiceImp employeeServiceImp;
 
-	@GetMapping("/home")
+	@GetMapping("/")
 	public String getHomePage() {
 		System.out.println("HomeController.getHomePage()");
 		return "home";
@@ -103,7 +103,7 @@ public class HomeController {
 
 	}
 
-	@GetMapping("/updateEmployee") // display register form
+	@PostMapping("/edit") // display register form
 	public String updateEmployee(@ModelAttribute("employee") Employee e, RedirectAttributes atr,
 			@RequestParam Integer employeeNo, Map<String, Object> map) {
 

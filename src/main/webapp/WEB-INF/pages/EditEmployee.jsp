@@ -3,7 +3,7 @@
 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <h1 style="color: red; text-align: center;">
-	<a href="report">Edit Employee </a>
+	<a href="updateEmployee">Edit Employee </a>
 </h1>
 <form:form modelAttribute="employee">
 	<table align="center" bgcolor="gray">
@@ -35,6 +35,7 @@
 			<td><input type="submit" value="cancel"></td>
 		</tr>
 	</table>
+
 
 
 </form:form>
