@@ -99,7 +99,7 @@ public class HomeController {
 
 		BeanUtils.copyProperties(foundEmployee, receivedEmployee);
 
-		return "EditEmployee";
+		return "editEmployee";
 
 	}
 
@@ -108,7 +108,7 @@ public class HomeController {
 
 		System.out.println("HomeController.updateEmployee()");
 
-		String message = employeeServiceImp.UdpateEmployee(e);
+		String message = employeeServiceImp.UdpateEmployee(e)+ " has been updated";
 		atr.addFlashAttribute("message", message);
 
 		return "redirect:reportOne";
@@ -133,7 +133,7 @@ public class HomeController {
 
 		System.out.println("HomeController.updateEmployee()");
 
-		String message = employeeServiceImp.deleteEmployee(e);
+		String message = employeeServiceImp.deleteEmployee(e)+" has been deleted";
 		atr.addFlashAttribute("message", message);
 
 		return "redirect:reportOne";
