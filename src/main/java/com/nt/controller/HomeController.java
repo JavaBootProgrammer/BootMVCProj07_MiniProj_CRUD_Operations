@@ -104,13 +104,12 @@ public class HomeController {
 	}
 
 	@PostMapping("/edit") // display register form
-	public String updateEmployee(@ModelAttribute("employee") Employee e, RedirectAttributes atr,
-			@RequestParam Integer employeeNo, Map<String, Object> map) {
+	public String updateEmployee(@ModelAttribute("employee") Employee e, RedirectAttributes atr) {
 
 		System.out.println("HomeController.updateEmployee()");
 
 		String message = employeeServiceImp.UdpateEmployee(e);
-		map.put("message", message);
+		atr.addFlashAttribute("message", message);
 
 		return "redirect:reportOne";
 
@@ -130,13 +129,12 @@ public class HomeController {
 	}
 	
 	@PostMapping("/delete") // display register form
-	public String deteleEmployeePageDisplay(@ModelAttribute("employee") Employee e, RedirectAttributes atr,
-			@RequestParam Integer employeeNo, Map<String, Object> map) {
+	public String deteleEmployeePageDisplay(@ModelAttribute("employee") Employee e, RedirectAttributes atr) {
 
 		System.out.println("HomeController.updateEmployee()");
 
 		String message = employeeServiceImp.deleteEmployee(e);
-		map.put("message", message);
+		atr.addFlashAttribute("message", message);
 
 		return "redirect:reportOne";
 
