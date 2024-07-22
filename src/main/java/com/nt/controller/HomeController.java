@@ -115,5 +115,31 @@ public class HomeController {
 		return "redirect:reportOne";
 
 	}
+	
+	@GetMapping("delete")
+	public String deteleEmployeePageDisplay(@ModelAttribute("employee") Employee receivedEmployee,
+			@RequestParam Integer employeeNo)
+	{
+		System.out.println("HomeController.deteleEmployeePageDisplay()");
+		
+		Employee foundEmployee= employeeServiceImp.findByID(employeeNo);
+
+		BeanUtils.copyProperties(foundEmployee, receivedEmployee);
+
+		return "deleteEmployee";
+	}
+	
+	@PostMapping("/delete") // display register form
+	public String deteleEmployeePageDisplay(@ModelAttribute("employee") Employee e, RedirectAttributes atr,
+			@RequestParam Integer employeeNo, Map<String, Object> map) {
+
+		System.out.println("HomeController.updateEmployee()");
+
+		String message = employeeServiceImp.deleteEmployee(e);
+		map.put("message", message);
+
+		return "redirect:reportOne";
+
+	}
 
 }

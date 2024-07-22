@@ -65,4 +65,13 @@ public class EmployeeServiceImp implements IEmployeeService {
 
 	}
 
+	@Override
+	public String deleteEmployee(Employee employee) {
+		System.out.println("EmployeeServiceImp.deleteEmployee()");
+		
+		employeeRepository.deleteById(employee.getEmployeeNo());
+		
+		return employee.getEmployeeNo()+"";
+	}
+
 }

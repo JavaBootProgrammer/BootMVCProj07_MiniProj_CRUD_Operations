@@ -3,7 +3,7 @@
 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <h1 style="color: red; text-align: center;">
-	Edit Employee
+	Delete Employee
 </h1>
 <form:form modelAttribute="employee">
 	<table align="center" bgcolor="gray">
@@ -16,22 +16,22 @@
 		<tr>
 
 			<td>Employee name
-			<td><form:input path="employeeName" /></td>
+			<td><form:input path="employeeName" readonly="true" /></td>
 		</tr>
 		<tr>
 			<td>Employee job
-			<td><form:input path="job" /></td>
+			<td><form:input path="job" readonly="true" /></td>
 		</tr>
 		<tr>
 			<td>Employee salary
-			<td><form:input path="salary" /></td>
+			<td><form:input path="salary" readonly="true" /></td>
 		</tr>
 		<tr>
 			<td>Employee dept
-			<td><form:input path="dept" /></td>
+			<td><form:input path="dept" readonly="true" /></td>
 		</tr>
 		<tr>
-			<td><input type="submit" value="Edit"></td>
+			<td><input type="submit" value="Delete"></td>
 			<td><input type="submit" value="cancel"></td>
 		</tr>
 	</table>
